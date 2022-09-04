@@ -1,5 +1,8 @@
 package com.liliputdev.decoratorpattern
 
+import com.liliputdev.decoratorpattern.decorator.IceCreamDecorator
+import com.liliputdev.decoratorpattern.decorator.IceCreamViewer
+import com.liliputdev.decoratorpattern.decorator.iceCreamParts.*
 import org.junit.Test
 
 import org.junit.Assert.*
@@ -10,8 +13,37 @@ import org.junit.Assert.*
  * See [testing documentation](http://d.android.com/tools/testing).
  */
 class ExampleUnitTest {
+
     @Test
-    fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
+    fun iceCreamDecorator_test() {
+        val res=IceCreamDecorator(
+            Sprinkles(
+                StrawberryScoop(
+                    VanillaScoop(
+                        ChocolateScoop(
+                            ConeClassic()
+                        )
+                    )
+                )
+            )
+        ).makeIceCream()
+        assertEquals(
+            "Classic Cone + chocolate + vanilla + strawberry + sprinkles",
+            res)
+    }
+
+    @Test
+    fun iceCreamViewer_test() {
+        val myIceCream=IceCreamViewer.showIceCream(arrayOf(
+            ConeSpecial(),
+            ChocolateScoop(),
+            VanillaScoop(),
+            StrawberryScoop(),
+            Sprinkles()
+        ))
+        assertEquals(
+            "Special Cone + chocolate + vanilla + strawberry + sprinkles",
+            myIceCream
+        )
     }
 }
