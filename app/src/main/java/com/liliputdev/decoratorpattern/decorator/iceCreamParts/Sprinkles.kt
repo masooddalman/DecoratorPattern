@@ -21,4 +21,11 @@ class Sprinkles(private var iceCream: IceCream?=null) : IceCreamDecorator(iceCre
         this.iceCream=part
         return this
     }
+
+    override fun calculatePrice(): Double? {
+        return iceCream?.calculatePrice()?.plus(addSprinklesPrice())
+    }
+    private fun addSprinklesPrice():Double{
+        return 0.15
+    }
 }

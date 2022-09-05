@@ -15,4 +15,8 @@ class ConeSpecial():IceCream {
     {
         return this
     }
+
+    override fun calculatePrice(): Double? {
+        return 0.5
+    }
 }

@@ -22,4 +22,11 @@ class ChocolateScoop(var iceCream: IceCream?=null) : IceCreamDecorator(iceCream)
         this.iceCream=part
         return this
     }
+
+    override fun calculatePrice(): Double? {
+        return iceCream?.calculatePrice()?.plus(addChocolateScoopPrice())
+    }
+    private fun addChocolateScoopPrice():Double{
+        return 0.33
+    }
 }

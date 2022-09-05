@@ -1,6 +1,5 @@
 package com.liliputdev.decoratorpattern.decorator.iceCreamParts
 
-import android.util.Log
 import com.liliputdev.decoratorpattern.decorator.IceCream
 import com.liliputdev.decoratorpattern.decorator.IceCreamDecorator
 
@@ -20,5 +19,12 @@ class StrawberryScoop(private var iceCream: IceCream?=null): IceCreamDecorator(i
     {
         this.iceCream=part
         return this
+    }
+
+    override fun calculatePrice(): Double? {
+        return iceCream?.calculatePrice()?.plus(addStrawberryScoopPrice())
+    }
+    private fun addStrawberryScoopPrice():Double{
+        return 0.33
     }
 }

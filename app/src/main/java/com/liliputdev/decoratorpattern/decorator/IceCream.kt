@@ -6,4 +6,5 @@ package com.liliputdev.decoratorpattern.decorator
 interface IceCream {
     fun makeIceCream(): String?
     fun addPart(part: IceCream):IceCream
+    fun calculatePrice():Double?
 }
