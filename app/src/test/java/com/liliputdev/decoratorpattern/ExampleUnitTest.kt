@@ -46,4 +46,20 @@ class ExampleUnitTest {
             myIceCream
         )
     }
+
+    @Test
+    fun iceCreamViewerWithPrice_test()
+    {
+        val myIceCream=IceCreamViewer.showIceCreamWithPrice(arrayOf(
+            ConeSpecial(),
+            ChocolateScoop(),
+            VanillaScoop(),
+            StrawberryScoop(),
+            Sprinkles()
+        ))
+        assertEquals(
+            "Special Cone + chocolate + vanilla + strawberry + sprinkles - price : 1.64$",
+            myIceCream
+        )
+    }
 }
