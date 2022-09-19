@@ -62,4 +62,20 @@ class ExampleUnitTest {
             myIceCream
         )
     }
+    //this is new
+    @Test
+    fun iceCreamViewerBuildIceCreamResourceList_test()
+    {
+        val myIceCream=IceCreamViewer.buildIceCreamResourceList(arrayOf(
+            ConeSpecial(),
+            ChocolateScoop(),
+            VanillaScoop(),
+            StrawberryScoop(),
+            Sprinkles()
+        ))
+        assertEquals(
+            5,
+            myIceCream?.size
+        )
+    }
 }
