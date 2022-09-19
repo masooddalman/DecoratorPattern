@@ -16,4 +16,9 @@ open class IceCreamDecorator(private var iceCream: IceCream?) : IceCream {
     override fun calculatePrice(): Double? {
         return iceCream?.calculatePrice()
     }
+
+    //this is new
+    override fun buildUI(): MutableList<Int>? {
+        return iceCream?.buildUI()
+    }
 }

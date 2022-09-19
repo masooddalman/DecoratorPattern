@@ -1,5 +1,6 @@
 package com.liliputdev.decoratorpattern.decorator.iceCreamParts
 
+import com.liliputdev.decoratorpattern.R
 import com.liliputdev.decoratorpattern.decorator.IceCream
 import com.liliputdev.decoratorpattern.decorator.IceCreamDecorator
 
@@ -18,5 +19,9 @@ class ConeSpecial():IceCream {
 
     override fun calculatePrice(): Double? {
         return 0.5
+    }
+    //this is new
+    override fun buildUI(): MutableList<Int>? {
+        return mutableListOf(R.drawable.special_cone)
     }
 }

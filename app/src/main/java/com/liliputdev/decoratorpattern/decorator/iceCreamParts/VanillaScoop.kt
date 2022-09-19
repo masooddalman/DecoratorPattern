@@ -1,6 +1,7 @@
 package com.liliputdev.decoratorpattern.decorator.iceCreamParts
 
 import android.util.Log
+import com.liliputdev.decoratorpattern.R
 import com.liliputdev.decoratorpattern.decorator.IceCream
 import com.liliputdev.decoratorpattern.decorator.IceCreamDecorator
 
@@ -27,5 +28,9 @@ class VanillaScoop(private var iceCream: IceCream? = null) : IceCreamDecorator(i
 
     private fun addVanillaScoopPrice(): Double {
         return 0.33
+    }
+    //this is new
+    override fun buildUI(): MutableList<Int>? {
+        return iceCream?.buildUI()?.apply { add(R.drawable.vanillascoop) }
     }
 }

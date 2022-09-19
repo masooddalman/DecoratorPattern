@@ -1,5 +1,6 @@
 package com.liliputdev.decoratorpattern.decorator.iceCreamParts
 
+import com.liliputdev.decoratorpattern.R
 import com.liliputdev.decoratorpattern.decorator.IceCream
 import com.liliputdev.decoratorpattern.decorator.IceCreamDecorator
 
@@ -26,5 +27,10 @@ class StrawberryScoop(private var iceCream: IceCream?=null): IceCreamDecorator(i
     }
     private fun addStrawberryScoopPrice():Double{
         return 0.33
+    }
+
+    //this is new
+    override fun buildUI(): MutableList<Int>? {
+        return iceCream?.buildUI()?.apply { add(R.drawable.strawberryscoop) }
     }
 }
